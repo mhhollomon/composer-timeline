@@ -1,43 +1,82 @@
+'use strict'
+
 const path = require('path');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const glob = require("glob");
+const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const miniCssExtractPlugin = require('mini-css-extract-plugin');
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
+
+const PATHS = {
+  src: path.join(__dirname, "src"),
+};
 
 module.exports = {
-    entry: {
-      index : './src/index.js',
+  mode: 'development',
+  entry: './src/js/main.ts',
+  output: {
+    filename: 'main-[fullhash].js',
+    path: path.resolve(__dirname, 'dist'),
+    clean : true
+  },
+  
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: "styles",
+          test: /\.css$/,
+          chunks: "all",
+          enforce: true,
+        },
+      },
     },
+  },
 
-    output: {
-        assetModuleFilename: "[name]-[chunkhash][ext]",
-        filename: '[name]-[chunkhash].js',
-        path: path.resolve(__dirname, 'dist'),
-        clean : true,
-    },
+  devServer: {
+    static: path.resolve(__dirname, 'dist'),
+    host : 'localhost',
+    port: 9988,
+    hot: true
+  },
 
-    devServer: {
-      host : 'localhost',
-      port : 9987,
-    },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },  
 
-    module: {
-        rules: [
-          {
-            test: /\.css$/i,
-            type: 'asset/resource',
-            generator : {
-              filename: "[name]-[contenthash][ext]",
-            }
+  plugins: [
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new miniCssExtractPlugin({filename: '[name]-[contenthash].css'}),
+    new PurgeCSSPlugin({
+        paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+      }),
+  
+  ],
+  module: {
+    rules: [
+        {
+            test: /\.tsx?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/,
           },
-          {
-            test: /\.css$/i,
-            use: ['extract-loader', 'css-loader'],
-          },
-          {
-            test: /\.html$/i,
-            use: ['html-loader'],
-          },
-        ],
-    },
-    plugins : [
-      new HtmlWebpackPlugin({ template : "src/index.html"})
+
+      {
+        test: /\.(scss)$/,
+        use: [
+            miniCssExtractPlugin.loader,
+            'css-loader',
+            { loader: 'postcss-loader',
+                options: {
+                    postcssOptions: {
+                    plugins: [
+                        autoprefixer
+                    ]
+                    }
+                }
+            },
+            { loader: 'sass-loader' },
+        ]
+      }
     ]
- };
+  }
+}
