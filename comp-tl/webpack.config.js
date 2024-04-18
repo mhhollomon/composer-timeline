@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
+//const loader = require('mini-css-extract-plugin/types/loader');
 
 const PATHS = {
   src: path.join(__dirname, "src"),
@@ -54,11 +55,24 @@ module.exports = {
   ],
   module: {
     rules: [
-        {
-            test: /\.tsx?$/,
-            use: 'ts-loader',
-            exclude: /node_modules/,
-          },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      { test : /\.html$/,
+        use: [ 'html-loader' ],
+      },
+      { test : /\.ya?ml$/,
+        use: 'yaml-loader',
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator : {
+          filename : "images/[hash][ext]"
+        }
+      },
 
       {
         test: /\.(scss)$/,

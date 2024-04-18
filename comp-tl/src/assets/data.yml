@@ -1,0 +1,121 @@
+---
+composers :
+  - name : Guillaume Du Fay
+    short: Du Fay
+    born : 5-Aug-1397
+    died : 27-Nov-1474
+  
+  - name : Thomas Tallis
+    born : 1505
+    died : 23-Nov-1585
+
+  - name : Giovanni Pierluigi da Palestrina
+    born : 3-Feb-1525
+    died : 2-Feb-1594
+
+  - name : William Byrd
+    born : 1540
+    died : 4-Jul-1623
+  
+  - name : Henry Purcell
+    born : 10-Sep-1659
+    died : 21-Nov-1695
+
+  - name : Antonio Vivaldi
+    born : 4-Mar-1678
+    died : 28-Jul-1741
+
+  - name : Georg Philipp Telemann
+    born : 24-Mar-1681
+    died : 25-Jun-1767
+
+  - name : George Frideric Handel
+    born : 5-Mar-1685
+    died : 14-Apr-1759
+
+  - name : Johann Sebastian Bach
+    short: JS Bach
+    born : 31-Mar-1685
+    died : 28-Jul-1750
+
+  - name : Carl Philipp Emanuel Bach
+    short: CPE Bach
+    born : 8-Mar-1714
+    died : 14-Dec-1788
+
+  - name : Joseph Haydn
+    born : 31-Mar-1732
+    died : 31-May-1809
+
+  - name : Johann Christian Bach
+    short: JC Bach
+    born : 5-Sep-1735
+    died : 1-Jan-1782
+
+  - name : Wolfgang Amadeus Mozart
+    born : 27-Jan-1756
+    died : 5-Dec-1791
+
+  - name : Ludwig van Beethoven
+    born : Dec-1770
+    died : 26-Mar-1827
+
+  - name : Franz Shubert
+    born : 31-Jan-1797
+    died : 19-Nov-1828
+
+  - name : Felix Mendelssohn
+    born : 3-Feb-1809
+    died : 4-Nov-1847
+
+  - name : Anton Bruckner
+    born : 4-Sep-1824
+    died : 11-Oct-1896
+
+  - name : Antonín Dvořák
+    born : 8-Sep-1841
+    died : 1-May-1904
+
+  - name : Gustav Mahler
+    born : 7-Jul-1860
+    died : 18-May-1911
+
+  - name : Jean Sibelius
+    born : 8-Dec-1865
+    died : 20-Sep-1957
+
+  - name : Igor Stravinski
+    born : 17-Jun-1882
+    died : 6-Apr-1971
+
+eras :
+  - name  : Medieval
+    start : 400
+    end   : 1400
+  - name  : Renaissance
+    start : 1400
+    end   : 1600
+  - name  : Baroque
+    start : 1600
+    end   : 1740
+  - name  : Classical
+    start : 1740
+    end   : 1810
+  - name  : Romantic
+    start : 1810
+    end   : 1900
+  - name  : Modernism
+    start : 1900
+    end   : 1967
+  - name  : Postmodernism
+    start : 1967
+    end   : 2200
+events :
+  - name : WWI
+    span :
+      start : 1914
+      stop  : 1918
+  - name : WWII
+    span :
+      start : 1939
+      stop  : 1945
