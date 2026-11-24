@@ -18,14 +18,17 @@ export default function Flex(props : FlexProps) {
         return undefined;
     });
 
-    const dir_class = createMemo(() => {
+    function dir_class()  {
         if (props.dir)
             return 'flex-dir-' + props.dir.substring(0,3);
 
         return undefined;
-    });
+    }
 
-
-    return (<div class={['d-flex', props.class, dir_class(), gap()]}>{props.children}</div>)
+    return (
+        <div class={['d-flex', props.class, dir_class(), gap()]}>
+            {props.children}
+        </div>
+    )
 
 }
