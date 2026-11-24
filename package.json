@@ -1,0 +1,29 @@
+{
+  "name": "composer-timeline",
+  "version": "0.0.0",
+  "description": "Interactive timeline of composers",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "oxlint src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@mgcrea/vite-plugin-build-info": "^0.5.0",
+    "@solidjs/diagnostics": "^2.0.0",
+    "@solidjs/vite-plugin": "^3.0.0",
+    "@types/node": "^26.6.6",
+    "eslint-plugin-solid": "~0.20.0",
+    "oxlint": "~1.92.0",
+    "sass": "^1.108.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  },
+  "dependencies": {
+    "@solidjs/web": "^2.0.0",
+    "radashi": "^13.1.1",
+    "solid-js": "^2.0.0"
+  }
+}

@@ -1,0 +1,67 @@
+@use "styleworks/scss/framework";
+
+:root {
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+    color : var(--clr-text);
+    background-color: var(--clr-bg-base);
+}
+
+.pointer {
+    cursor : pointer;
+}
+
+.bare-link {
+    cursor : pointer;
+    text-decoration: none;
+    color : inherit;
+}
+
+.bare-btn {
+    background-color: inherit;
+    color : inherit;
+    border: none;
+
+}
+
+
+/******* ABOUT COMPONENT **********************/
+.about-dialog {
+    border: none;
+    position: fixed;
+    border-radius: var(--border-radius);
+    background-color: var(--clr-bg-base);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    margin: .5em;
+
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(6px);
+    }
+}
+
+.about-table td,th {
+    padding-inline : var(--spacing-2);
+}
+
+button.dialog-close {
+    display: inline-flex;
+    background-color: inherit;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-inline: var(--spacing-1);
+    border-radius: var(--spacing-1);
+}
+
+.about-closer {
+    background-color: var(--clr-error);
+}
