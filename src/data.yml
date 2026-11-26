@@ -1,4 +1,10 @@
 composers :
+  - name : Hildegard of Bingen
+    short: Hildegard
+    born : 1098
+    died : 17-Sep-1179
+    url  : https://en.wikipedia.org/wiki/Hildegard_of_Bingen
+
   - name : Guillaume Du Fay
     short: Du Fay
     born : 5-Aug-1397
@@ -87,24 +93,32 @@ eras :
   - name  : Medieval
     start : 400
     end   : 1400
+    url   : https://en.wikipedia.org/wiki/Medieval_music
   - name  : Renaissance
     start : 1400
     end   : 1600
+    url   : https://en.wikipedia.org/wiki/Renaissance_music
   - name  : Baroque
     start : 1600
     end   : 1740
+    url   : https://en.wikipedia.org/wiki/Baroque_music
   - name  : Classical
     start : 1740
     end   : 1810
+    url   : https://en.wikipedia.org/wiki/Classical_period_(music)
   - name  : Romantic
     start : 1810
     end   : 1900
+    url   : https://en.wikipedia.org/wiki/Romantic_music
   - name  : Modernism
     start : 1900
     end   : 1967
+    url   : https://en.wikipedia.org/wiki/Modernism_(music)
   - name  : Postmodernism
     start : 1967
     end   : 2200
+    url   : https://en.wikipedia.org/wiki/Postmodern_music
+
 events :
   - name : WWI
     span :

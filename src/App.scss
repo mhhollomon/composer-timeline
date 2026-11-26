@@ -9,6 +9,9 @@
 body {
     color : var(--clr-text);
     background-color: var(--clr-bg-base);
+    max-height : 100vh;
+    height: 100vh;
+    container-type: size;
 }
 
 .pointer {
@@ -28,6 +31,18 @@ body {
 
 }
 
+/******* MAIN **********************/
+
+.tl-parent {
+    max-width : 100vw;
+    width : min(100vw, 1024px);
+    border : 1px solid black;
+    margin : 2rem auto;
+    height : calc(100cqh - 5rem);
+    overflow-x: scroll;
+    overflow-y : auto;
+    container-type: size;
+}
 
 /******* ABOUT COMPONENT **********************/
 .about-dialog {
@@ -65,3 +80,116 @@ button.dialog-close {
 .about-closer {
     background-color: var(--clr-error);
 }
+
+/***** TIMELINE *************************/
+
+:root {
+    --tl-bg-1 : hsl(5, 50%, 80%);
+    --tl-bg-2 : hsl(125, 50%, 80%);
+    --tl-bg-3 : hsl(240, 50%, 80%);
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-ruler {
+    anchor-name: --timeline-ruler;
+    position: relative;
+    width : 100%;
+    height: 3em;
+    border: none;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+@mixin ruler-tick {
+    position: absolute;
+    position-anchor: --timeline-ruler;
+    border-width : 0px 1px 0px 1px;
+    border-style: solid;
+    border-color: black;
+    width: 1px;
+    bottom: 0px;
+}
+
+.long-ruler-tick {
+    @include ruler-tick;
+    height : 1rem;
+}
+
+.short-ruler-tick {
+    @include ruler-tick;
+    height: 0.5rem;
+}
+
+.ruler-tick-number {
+    position: absolute;
+    bottom: 1.1em;
+    margin : 0;
+    padding : 0;
+    transform: translate(-50%, 0);
+}
+
+.timeline-era-container {
+    anchor-name: --timeline;
+    position: relative;
+    width: 100%;
+    border: 0;
+    flex-grow: 1;
+}
+
+.timeline-era {
+    position-anchor: --timeline;
+    display : flow;
+    align-content: center;
+    margin : 0;
+    position : absolute;
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    border-color: black;
+    overflow: hidden;
+    user-select: none;
+
+    &:last-of-type {
+        border-width: 1px 0px 1px 0px;
+    }
+
+}
+
+.era-tooltip-popover {
+    position : absolute;
+    top : calc(anchor(bottom) + 5px);
+    justify-self: anchor-center;
+    background-color : var(--clr-bg-near);
+    border-radius : 5px;
+}
+
+.era-tooltip-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    background-color : var(--clr-bg-near);
+    margin : var(--spacing-1) var(--spacing-2);
+}
+
+.era-dialog-popover {
+    position : fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color : var(--clr-bg-near);
+    border-radius: 5px;
+
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(6px);
+    }    
+}
+
+.era-dialog-data {
+    margin : var(--spacing-1) var(--spacing-2);
+}
+

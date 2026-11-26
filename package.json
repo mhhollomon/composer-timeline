@@ -10,20 +10,22 @@
     "lint": "oxlint src"
   },
   "license": "MIT",
+  "dependencies": {
+    "@solidjs/web": "^2.0.3",
+    "date-fns": "^4.4.0",
+    "js-yaml": "^5.5.0",
+    "radashi": "^13.1.1",
+    "solid-js": "^2.0.3"
+  },
   "devDependencies": {
     "@mgcrea/vite-plugin-build-info": "^0.5.0",
-    "@solidjs/diagnostics": "^2.0.0",
-    "@solidjs/vite-plugin": "^3.0.0",
-    "@types/node": "^26.6.6",
-    "eslint-plugin-solid": "~0.20.0",
-    "oxlint": "~1.92.0",
+    "@solidjs/diagnostics": "^2.0.3",
+    "@solidjs/vite-plugin": "^3.0.1",
+    "@types/node": "^26.6.7",
+    "eslint-plugin-solid": "^0.20.1",
+    "oxlint": "~1.95.0",
     "sass": "^1.108.2",
     "typescript": "^7.0.2",
     "vite": "^8.3.8"
-  },
-  "dependencies": {
-    "@solidjs/web": "^2.0.0",
-    "radashi": "^13.1.1",
-    "solid-js": "^2.0.0"
   }
 }
