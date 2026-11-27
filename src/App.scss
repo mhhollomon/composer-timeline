@@ -84,14 +84,31 @@ button.dialog-close {
 /***** TIMELINE *************************/
 
 :root {
-    --tl-bg-1 : hsl(5, 50%, 80%);
-    --tl-bg-2 : hsl(125, 50%, 80%);
-    --tl-bg-3 : hsl(240, 50%, 80%);
+    --tl-era-bg-1 : hsl(5, 50%, 80%);
+    --tl-era-bg-2 : hsl(125, 50%, 80%);
+    --tl-era-bg-3 : hsl(240, 50%, 80%);
+    --tl-event-bg : hsl(0, 0%, 40%);
+}
+
+.tl-era-bg-1 {
+    background-color: var(--tl-era-bg-1);
+}
+.tl-era-bg-2 {
+    background-color: var(--tl-era-bg-2);
+}
+.tl-era-bg-3 {
+    background-color: var(--tl-era-bg-3);
+}
+
+.tl-event-bg {
+    background-color : var(--tl-event-bg);
+    color : white;
 }
 
 .timeline {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .timeline-ruler {
@@ -138,6 +155,7 @@ button.dialog-close {
     width: 100%;
     border: 0;
     flex-grow: 1;
+    height : 3em;
 }
 
 .timeline-era {
@@ -193,3 +211,10 @@ button.dialog-close {
     margin : var(--spacing-1) var(--spacing-2);
 }
 
+.timeline-composer-container {
+    anchor-name: --timeline-composer;
+    position: relative;
+    width: 100%;
+    border: 0;
+    flex-grow: 1;
+}

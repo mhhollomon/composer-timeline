@@ -116,15 +116,19 @@ eras :
     url   : https://en.wikipedia.org/wiki/Modernism_(music)
   - name  : Postmodernism
     start : 1967
-    end   : 2200
+    end   : 2100
     url   : https://en.wikipedia.org/wiki/Postmodern_music
 
 events :
-  - name : WWI
-    span :
-      start : 1914
-      stop  : 1918
-  - name : WWII
-    span :
-      start : 1939
-      stop  : 1945
+  - name  : American Revolution
+    start : 1765
+    end   : 1783
+  - name  : French Revolution
+    start : 5-May-1789
+    end   : 9-Nov-1799
+  - name  : WWI
+    start : 1914
+    end   : 1918
+  - name  : WWII
+    start : 1939
+    end   : 1945
